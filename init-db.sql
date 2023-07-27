@@ -35,3 +35,17 @@ UPDATE
 	npc_irs.book_mark 
 SET 
 	page = random() * ((SELECT pages FROM npc_irs.book WHERE npc_irs.book_mark.book = npc_irs.book.id) - 2) + 1;
+
+UPDATE 
+	npc_irs.book_mark 
+SET 
+	date =  (
+		SELECT 
+			CASE 
+				WHEN book_mark.date > book.release_date THEN book_mark.date
+				ELSE book.release_date
+			END
+		FROM 
+			npc_irs.book 
+		WHERE 
+			npc_irs.book_mark.book = npc_irs.book.id);
