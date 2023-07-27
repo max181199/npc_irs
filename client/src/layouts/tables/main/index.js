@@ -81,21 +81,21 @@ function Tables() {
                 color='dark'
                 onClick={addRow}
               >
-                Добавить
+                Добавить запись
               </MDButton>
               <MDButton
                 size='large'
                 color='dark'
                 onClick={dropRows}
               >
-                Удалить
+                Удалить запись
               </MDButton>
               <MDButton
                 size='large'
                 color='dark'
                 onClick={updateRow}
               >
-                Изменить
+                Изменить запись
               </MDButton>
             </MDBox>
           </Grid>

@@ -131,11 +131,11 @@ function update(){
       message: '',
       isError: false,
     }
-    for (let list of updateList) {
+    for (let link of updateList) {
       try {
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        var raw = JSON.stringify(list);
+        var raw = JSON.stringify(link);
         var requestOptions = {
           method: 'POST',
           headers: myHeaders,
@@ -146,7 +146,7 @@ function update(){
         var res = await resJson.json()
         if (res.error){
           error['title'] = res.title
-          error['message'] = error.message !== '' ? error.message + '\n' + `${list.id}:: ` + res.message : `${list.id}:: ` + res.message
+          error['message'] = error.message !== '' ? error.message + '\n' + `${link.id}:: ` + res.message : `${link.id}:: ` + res.message
           error['isError'] = true
           continue
         }
