@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS npc_irs.book (
 	UNIQUE(name, author, publication)
 );
 
-INSERT INTO npc_irs.book (id, name, author, publication, release_date, edition, rating, pages) VALUES (0, 'Не известно', 'Не известно', 'Не известно', NULL, NULL, NULL, NULL);
+INSERT INTO npc_irs.book (id, name, author, publication, release_date, edition, rating, pages) VALUES (0, 'Unknown', 'Unknown', 'Unknown', NULL, NULL, NULL, NULL);
 
 \COPY npc_irs.book(name, author, publication, release_date, edition, rating, pages)  FROM './mock_data_book.csv' DELIMITER ',' CSV;
 
